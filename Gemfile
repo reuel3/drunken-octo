@@ -9,9 +9,6 @@ gem 'heroku'
 group :development, :test do
   gem 'sqlite3'
 end
-group :production do
-  gem 'pg'
-end
 
 #alternative to webrick in production
 group :production do
