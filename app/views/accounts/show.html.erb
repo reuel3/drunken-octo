@@ -1,6 +1,27 @@
 <h1><%= @account.Name %></h1>
 
-Type - <%= @account.Type %><br>
-Industry - <%= @account.Industry %><br>
-Phone - <%= @account.Phone %><br>
-Rating - <%= @account.Rating %><br>
+
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Name</td>
+		<td bgcolor="#ffffff"><%= @account["Name"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Description</td>
+		<td bgcolor="#ffffff"><%= @account["Description__c"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Price</td>
+		<td bgcolor="#ffffff"><%= @account["Price__c"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Total Inventory</td>
+		<td bgcolor="#ffffff"><%= @account["Total_Inventory__c"] %></td>
+	</tr>
+
+</table>
+
+<%= link_to "edit account", edit_account_path %>
+  
+  <%= link_to 'Edit', edit_account_path(@account) %> |
+  <%= link_to 'Back', accounts_path %>

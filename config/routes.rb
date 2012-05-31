@@ -1,4 +1,6 @@
 Clouddevelopmentresearch::Application.routes.draw do
+  
+  resources :accounts
   get "accounts/index"
 
   get "accounts/new"
@@ -10,6 +12,7 @@ Clouddevelopmentresearch::Application.routes.draw do
 
   get "accounts/show"
   
-  resources :accounts
+  get "accounts/edit"
+  
   root :to => "accounts#index"
 end

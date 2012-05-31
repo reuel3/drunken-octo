@@ -1,2 +1,19 @@
-<h1>Accounts#new</h1>
-<p>Find me in app/views/accounts/new.html.erb</p>
+<%= form_for(@account) do |form| %>
+    <% Merchandise__c.attributes.select {|a| Merchandise__c.updateable?(a)}.each do |attr| %>
+        <field>
+            <%= form.label attr, Merchandise__c.label_for(attr) %>
+            <% case Merchandise__c.field_type(attr) %>
+                <% when "boolean" %>
+                    <%= form.check_box attr %>
+                <% when "multipicklist" %>
+                <% when "picklist" %>
+                    <% puts "Rendering picklist for #{attr}, value is #{@account[attr]}, type is #{Merchandise__c.field_type(attr)}"%>
+                    <%= form.select attr, Merchandise__c.picklist_values(attr).collect {|p| [p["label"], p["value"]]}, :multiple => (Merchandise__c.field_type(attr) == "multipicklist") %>
+                <% else %>
+                    <%= form.text_field attr%>
+            <% end %>
+        </field>
+        <br>
+    <% end %>
+    <%= form.submit %>
+<% end %>

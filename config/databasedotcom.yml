@@ -4,4 +4,4 @@ host: login.salesforce.com
 username: reuel3@gmail.com
 password: 1willlearng4todsIdPP18YGfLHHEYWitVT
 verify_mode: OpenSSL::SSL::VERIFY_NONE
-debugging: true
+debugging: false

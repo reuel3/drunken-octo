@@ -1,0 +1,22 @@
+<h1>Editing user  <%= @account.Name %> </h1>
+
+<%= @account["Description__c"] %>
+
+<span class="nav"><a href="/accounts/index">Search</a></span><p/>
+<span class="title">Edit Account</span>
+<p/>
+
+<form method="post" action="/accounts/<%= params[:id]%>/save"> 
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Name</td>
+		<td bgcolor="#ffffff"><%= @account["Name"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">City</td>
+		<td bgcolor="#ffffff"><input type="input" name="Description__c" value="<%= @account["Description__c"] %>" style="width:150px"></td>
+	</tr>
+
+		<td colspan="2" bgcolor="#ffffff" align="center"><input type="submit" value="Submit"></td> 
+	</tr>	
+</table>
