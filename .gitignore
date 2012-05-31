@@ -7,8 +7,6 @@
 # Ignore bundler config
 /.bundle
 
-# Ignore dbdc login details
-/config/databasedotcom.yml
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
